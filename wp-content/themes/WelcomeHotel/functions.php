@@ -4,14 +4,15 @@ function welcomehotel_enqueue_scripts() {
     // Основной CSS
     wp_enqueue_style('welcomehotel-style', get_stylesheet_uri());
     wp_enqueue_style('welcomehotel-custom', get_template_directory_uri() . '/assets/css/style.css');
-    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
+    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     
     // Google Fonts
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap', [], null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap', [], null);
     
     // Основной JS
     wp_enqueue_script('welcomehotel-main', get_template_directory_uri() . '/assets/js/main.js', [], '1.0', true);
-    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', [], '1.0', true);
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', [], null, true);
+    wp_enqueue_script('gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'welcomehotel_enqueue_scripts');
 
