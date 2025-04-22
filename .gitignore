@@ -1,0 +1,15 @@
+# WordPress
+wp-config.php
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backup*/
+*.log
+
+# XAMPP
+/htdocs/.DS_Store
+/htdocs/xampp/
+
+# Локальные файлы
+.vscode/
+*.sql
