@@ -28,6 +28,10 @@ add_action('init', 'welcomehotel_register_menus');
 // Поддержка миниатюр
 add_theme_support('post-thumbnails');
 
+// Кастомные размеры изображений
+add_image_size('hotel-thumb', 400, 200, true); // Для номеров, акций, услуг
+add_image_size('review-avatar', 80, 80, true); // Для аватаров отзывов
+
 // Регистрация кастомных типов записей
 function welcomehotel_custom_post_types() {
     // Номера

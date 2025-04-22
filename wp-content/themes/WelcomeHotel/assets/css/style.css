@@ -1,3 +1,30 @@
+/* Основные стили */
+:root {
+    --primary-dark: #1A1A1A;
+    --accent-gold: #D4A017;
+    --accent-burgundy: #4A1A2C;
+    --accent-emerald: #1A4A3C;
+    --text-white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background-color: var(--primary-dark);
+    color: var(--text-white);
+}
+
+h1, h2, h3 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--accent-gold);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Шапка */
 .site-header {
     background-color: var(--primary-dark);
@@ -7,6 +34,7 @@
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--accent-gold);
 }
 
 .site-header .container {
@@ -16,7 +44,8 @@
 }
 
 .logo img {
-    height: 60px;
+    height: 70px;
+    filter: drop-shadow(0 0 5px var(--accent-gold));
 }
 
 .primary-nav .nav-menu {
@@ -27,7 +56,7 @@
 }
 
 .primary-nav .nav-menu li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .primary-nav .nav-menu li a {
@@ -35,11 +64,12 @@
     text-decoration: none;
     font-family: 'Playfair Display', serif;
     font-size: 18px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .primary-nav .nav-menu li a:hover {
     color: var(--accent-gold);
+    transform: scale(1.1);
 }
 
 /* Герой-секция с параллаксом */
@@ -60,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
@@ -70,158 +100,277 @@
 }
 
 .hero h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 72px;
+    font-size: 80px;
     margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--accent-gold);
 }
 
 .hero p {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 30px;
+    font-family: 'Lora', serif;
 }
 
 .cta-button {
     background-color: var(--accent-gold);
     color: var(--primary-dark);
-    padding: 15px 30px;
+    padding: 15px 40px;
     text-decoration: none;
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
 }
 
 .cta-button:hover {
     background-color: var(--accent-burgundy);
     color: var(--text-white);
+    transform: scale(1.05);
 }
 
 /* Слайдер номеров */
 .rooms {
-    padding: 60px 0;
+    padding: 80px 0;
+    background-color: var(--primary-dark);
 }
 
 .rooms h2 {
     text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 48px;
-    margin-bottom: 40px;
+    font-size: 60px;
+    margin-bottom: 50px;
 }
 
 .room-card {
-    background-color: var(--primary-dark);
-    border: 1px solid var(--accent-gold);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-gold);
+    padding: 25px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .room-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-gold);
 }
 
-.room-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+.room-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .room-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
 .room-card p {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Слайдер акций */
 .promotions {
-    padding: 60px 0;
-    background-color: var(--accent-emerald);
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--accent-emerald), var(--primary-dark));
 }
 
 .promotions h2 {
     text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 48px;
-    margin-bottom: 40px;
+    font-size: 60px;
+    margin-bottom: 50px;
 }
 
 .promotion-card {
-    background-color: var(--primary-dark);
-    border: 1px solid var(--accent-gold);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-gold);
+    padding: 25px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .promotion-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-gold);
 }
 
-.promotion-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+.promotion-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .promotion-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
 .promotion-card p {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Слайдер отзывов */
 .reviews {
-    padding: 60px 0;
-    background-color: var(--accent-burgundy);
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--accent-burgundy), var(--primary-dark));
 }
 
 .reviews h2 {
     text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 48px;
-    margin-bottom: 40px;
+    font-size: 60px;
+    margin-bottom: 50px;
 }
 
 .review-card {
-    background-color: var(--primary-dark);
-    border: 1px solid var(--accent-gold);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-gold);
+    padding: 25px;
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.review-card .review-avatar {
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-gold);
+}
+
+.review-avatar {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin: 0 auto 15px;
+    margin: 0 auto 20px;
+    object-fit: cover;
 }
 
 .review-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .review-card p {
     font-size: 16px;
 }
 
+/* Услуги */
+.services {
+    padding: 80px 0;
+    background-color: var(--primary-dark);
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-gold);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-gold);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 16px;
+}
+
+/* Бронирование */
+.booking {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--accent-emerald), var(--primary-dark));
+}
+
+.booking h2 {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 10px;
+}
+
+/* Контакты */
+.contact {
+    padding: 80px 0;
+    background-color: var(--primary-dark);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 10px;
+}
+
+.map-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid var(--accent-gold);
+}
+
 /* Инфографика */
 .stats-section {
     display: flex;
     justify-content: space-around;
-    padding: 50px 0;
-    background-color: var(--accent-burgundy);
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--accent-burgundy), var(--primary-dark));
 }
 
 .stat-item {
@@ -230,27 +379,30 @@
 
 .stat-number {
     font-family: 'Great Vibes', cursive;
-    font-size: 48px;
+    font-size: 60px;
     color: var(--accent-gold);
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--accent-gold);
 }
 
 .stat-item p {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Lora', serif;
 }
 
 /* Футер */
 .site-footer {
     background-color: var(--primary-dark);
-    padding: 40px 0;
+    padding: 60px 0;
     color: var(--text-white);
+    border-top: 2px solid var(--accent-gold);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
 }
 
 .footer-menu .footer-nav {
@@ -260,12 +412,15 @@
 }
 
 .footer-menu .footer-nav li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .footer-menu .footer-nav li a {
     color: var(--text-white);
     text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .footer-menu .footer-nav li a:hover {
@@ -275,8 +430,11 @@
 .social-links a {
     display: block;
     color: var(--text-white);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .social-links a:hover {
@@ -284,13 +442,19 @@
 }
 
 .footer-info p {
-    margin: 5px 0;
+    margin: 10px 0;
+    font-family: 'Lora', serif;
+    font-size: 16px;
 }
 
 /* Адаптивность */
 @media (max-width: 1280px) {
-    .rooms-slider .swiper-slide {
-        width: 33.33%;
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -309,11 +473,15 @@
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 60px;
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-content {
@@ -321,30 +489,30 @@
         text-align: center;
     }
 
-    .rooms-slider .swiper-slide {
-        width: 50%;
+    .rooms h2, .promotions h2, .reviews h2, .services h2, .booking h2, .contact h2 {
+        font-size: 48px;
     }
 }
 
 @media (max-width: 375px) {
     .hero h1 {
-        font-size: 36px;
+        font-size: 48px;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .cta-button {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 12px 30px;
+        font-size: 18px;
     }
 
-    .rooms h2, .promotions h2, .reviews h2 {
+    .rooms h2, .promotions h2, .reviews h2, .services h2, .booking h2, .contact h2 {
         font-size: 36px;
     }
 
-    .rooms-slider .swiper-slide {
-        width: 100%;
+    .room-image, .promotion-image, .service-image {
+        height: 150px;
     }
 }
