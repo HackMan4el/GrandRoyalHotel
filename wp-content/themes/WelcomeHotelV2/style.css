@@ -1,0 +1,25 @@
+/*
+ Theme Name: WelcomeHotelV2
+ Theme URI: https://github.com/HackMan4el/GrandRoyalHotel
+ Author: HackMan4el
+ Author URI: https://github.com/HackMan4el
+ Description: A luxurious 6-star hotel theme for Grand Royal Hotel Best In The World, with elegant design and animations.
+ Version: 1.0
+ Tags: hotel, luxury, responsive
+ Text Domain: welcomehotelv2
+*/
+
+:root {
+    --primary-bg: #F8F1E9;
+    --accent-gold: #D4A017;
+    --accent-gray: #D3D3D3;
+    --text-dark: #333333;
+    --text-white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+}
