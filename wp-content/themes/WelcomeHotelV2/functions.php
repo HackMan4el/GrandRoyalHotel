@@ -1,24 +1,20 @@
 <?php
 // Подключение стилей и скриптов
 function welcomehotel_enqueue_scripts() {
-    // Основной CSS
     wp_enqueue_style('welcomehotel-style', get_stylesheet_uri());
     wp_enqueue_style('welcomehotel-custom', get_template_directory_uri() . '/assets/css/style.css');
-    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11.1.4');
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap', [], null);
-    
-    // Основной JS
     wp_enqueue_script('welcomehotel-main', get_template_directory_uri() . '/assets/js/main.js', [], '1.0', true);
-    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', [], null, true);
-    wp_enqueue_script('gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js', [], null, true);
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11.1.4', true);
 }
 add_action('wp_enqueue_scripts', 'welcomehotel_enqueue_scripts');
 
 // Регистрация меню
 function welcomehotel_register_menus() {
     register_nav_menus([
-        'primary-menu' => __('Primary Menu', 'welcomehotelv2'),
-        'footer-menu' => __('Footer Menu', 'welcomehotelv2'),
+        'primary-menu' => __('Главное меню', 'welcomehotelv2'),
+        'footer-menu' => __('Меню в футере', 'welcomehotelv2'),
     ]);
 }
 add_action('init', 'welcomehotel_register_menus');
@@ -30,11 +26,10 @@ add_image_size('review-avatar', 80, 80, true);
 
 // Регистрация кастомных типов записей
 function welcomehotel_custom_post_types() {
-    // Номера
     register_post_type('room', [
         'labels' => [
-            'name' => __('Rooms', 'welcomehotelv2'),
-            'singular_name' => __('Room', 'welcomehotelv2'),
+            'name' => __('Номера', 'welcomehotelv2'),
+            'singular_name' => __('Номер', 'welcomehotelv2'),
         ],
         'public' => true,
         'has_archive' => true,
@@ -42,11 +37,10 @@ function welcomehotel_custom_post_types() {
         'rewrite' => ['slug' => 'rooms'],
     ]);
 
-    // Акции
     register_post_type('promotion', [
         'labels' => [
-            'name' => __('Promotions', 'welcomehotelv2'),
-            'singular_name' => __('Promotion', 'welcomehotelv2'),
+            'name' => __('Акции', 'welcomehotelv2'),
+            'singular_name' => __('Акция', 'welcomehotelv2'),
         ],
         'public' => true,
         'has_archive' => true,
@@ -54,11 +48,10 @@ function welcomehotel_custom_post_types() {
         'rewrite' => ['slug' => 'promotions'],
     ]);
 
-    // Отзывы
     register_post_type('review', [
         'labels' => [
-            'name' => __('Reviews', 'welcomehotelv2'),
-            'singular_name' => __('Review', 'welcomehotelv2'),
+            'name' => __('Отзывы', 'welcomehotelv2'),
+            'singular_name' => __('Отзыв', 'welcomehotelv2'),
         ],
         'public' => true,
         'has_archive' => false,

@@ -15,9 +15,12 @@
             </div>
             <div class="footer-info">
                 <p>123 Luxury Street, Moscow, Russia</p>
-                <p>+7 (495) 123-45-67</p>
-                <p>info@grandroyalhotel.com</p>
+                <p>Phone: +7 (495) 123-45-67</p>
+                <p>Email: info@grandroyalhotel.com</p>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <?php echo date('Y'); ?> Grand Royal Hotel Best In The World. All rights reserved.</p>
         </div>
     </div>
 </footer>

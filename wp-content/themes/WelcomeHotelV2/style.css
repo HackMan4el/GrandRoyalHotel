@@ -16,10 +16,3 @@
     --text-dark: #333333;
     --text-white: #FFFFFF;
 }
-
-body {
-    margin: 0;
-    font-family: 'Merriweather', serif;
-    background-color: var(--primary-bg);
-    color: var(--text-dark);
-}
