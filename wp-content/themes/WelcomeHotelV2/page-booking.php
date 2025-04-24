@@ -1,21 +1,19 @@
 <?php
 /*
-Template Name: Booking
+Template Name: Бронирование
 */
 get_header(); ?>
-<main class="page-content">
+<main class="page-content page-booking">
     <div class="container">
-        <h1 class="page-title animate">Book Your Stay</h1>
-        <div class="booking-form animate scale">
+        <h1 class="page-title animate">Забронируйте ваше пребывание</h1>
+        <div class="booking-content">
             <?php
-            // Выводим контент страницы из Gutenberg (например, описание)
             if (have_posts()) :
                 while (have_posts()) : the_post();
                     the_content();
                 endwhile;
             endif;
             ?>
-            <?php echo do_shortcode('[contact-form-7 id="YOUR_BOOKING_FORM_ID" title="Booking Form"]'); ?>
         </div>
     </div>
 </main>

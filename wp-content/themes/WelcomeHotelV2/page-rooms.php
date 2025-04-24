@@ -3,7 +3,7 @@
 Template Name: Номерной Фонд
 */
 get_header(); ?>
-<main class="page-content">
+<main class="page-content page-rooms">
     <div class="container">
         <h1 class="page-title animate">Наши номера</h1>
         <div class="rooms-content">

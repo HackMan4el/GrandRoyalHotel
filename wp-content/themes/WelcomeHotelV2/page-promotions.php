@@ -3,7 +3,7 @@
 Template Name: Акции
 */
 get_header(); ?>
-<main class="page-content">
+<main class="page-content page-promotions">
     <div class="container">
         <h1 class="page-title animate">Специальные предложения</h1>
         <div class="promotions-content">
@@ -31,7 +31,7 @@ get_header(); ?>
                                 <?php endif; ?>
                                 <h3><?php the_title(); ?></h3>
                                 <p><?php echo wp_trim_words(get_the_content(), 15); ?></p>
-                                <a href="<?php the_permalink(); ?>" class="cta-button">Узнать больше</a>
+                                <a href="<?php the_permalink(); ?>" class="cta-button">Подробнее</a>
                             </div>
                         </div>
                     <?php

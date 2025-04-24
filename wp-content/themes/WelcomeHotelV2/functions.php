@@ -23,6 +23,7 @@ add_action('init', 'welcomehotel_register_menus');
 add_theme_support('post-thumbnails');
 add_image_size('hotel-thumb', 400, 250, true);
 add_image_size('review-avatar', 80, 80, true);
+add_image_size('single-featured', 800, 400, true);
 
 // Регистрация кастомных типов записей
 function welcomehotel_custom_post_types() {
@@ -56,6 +57,17 @@ function welcomehotel_custom_post_types() {
         'public' => true,
         'has_archive' => false,
         'supports' => ['title', 'editor', 'thumbnail'],
+    ]);
+
+    register_post_type('service', [
+        'labels' => [
+            'name' => __('Услуги', 'welcomehotelv2'),
+            'singular_name' => __('Услуга', 'welcomehotelv2'),
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'rewrite' => ['slug' => 'services'],
     ]);
 }
 add_action('init', 'welcomehotel_custom_post_types');

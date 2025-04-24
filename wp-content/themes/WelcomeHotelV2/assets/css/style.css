@@ -742,19 +742,54 @@ h3 {
     }
 }
 
+/* ... (предыдущий код для главной страницы без изменений) ... */
+
 /* Gutenberg Blocks */
+.page-content {
+    padding: 80px 0;
+    background-color: var(--primary-bg);
+}
+
+.page-title {
+    font-family: 'Great Vibes', cursive;
+    color: var(--accent-gold);
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .wp-block-heading {
     font-family: 'Great Vibes', cursive;
     color: var(--accent-gold);
-    margin-bottom: 20px;
+    margin: 30px 0 20px;
+    line-height: 1.2;
+}
+
+.wp-block-heading h1, .wp-block-heading h2 {
+    font-size: 36px;
+}
+
+.wp-block-heading h3 {
+    font-size: 28px;
+}
+
+.wp-block-heading h4, .wp-block-heading h5, .wp-block-heading h6 {
+    font-size: 20px;
 }
 
 .wp-block-paragraph {
     font-family: 'Merriweather', serif;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--text-dark);
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.8;
+    margin: 0 auto 25px;
+    max-width: 800px;
+    text-align: justify;
+}
+
+.wp-block-image {
+    margin: 30px auto;
+    text-align: center;
 }
 
 .wp-block-image img {
@@ -762,12 +797,136 @@ h3 {
     height: auto;
     border: 2px solid var(--accent-gold);
     border-radius: 10px;
-    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.wp-block-image img:hover {
+    transform: scale(1.05);
 }
 
 .wp-block-image figcaption {
     font-family: 'Playfair Display', serif;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-dark);
+    margin-top: 10px;
     text-align: center;
+}
+
+.wp-block-columns {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.wp-block-column {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    flex: 1;
+    min-width: 300px;
+}
+
+.wp-block-column:hover {
+    transform: scale(1.05);
+}
+
+.wp-block-list {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.wp-block-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.wp-block-list li::before {
+    content: '★';
+    color: var(--accent-gold);
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.wp-block-button {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.wp-block-button__link {
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.wp-block-button__link:hover {
+    background-color: var(--accent-gray);
+    transform: scale(1.05);
+}
+
+.wp-block-embed {
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.wp-block-embed iframe {
+    border: 2px solid var(--accent-gold);
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+}
+
+/* Адаптивность для Gutenberg */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 36px;
+    }
+
+    .wp-block-heading h1, .wp-block-heading h2 {
+        font-size: 28px;
+    }
+
+    .wp-block-heading h3 {
+        font-size: 24px;
+    }
+
+    .wp-block-paragraph {
+        font-size: 16px;
+    }
+
+    .wp-block-column {
+        min-width: 100%;
+    }
+
+    .wp-block-embed iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 375px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .wp-block-heading h1, .wp-block-heading h2 {
+        font-size: 24px;
+    }
+
+    .wp-block-paragraph {
+        font-size: 14px;
+    }
 }
