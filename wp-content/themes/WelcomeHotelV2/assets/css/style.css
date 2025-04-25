@@ -411,6 +411,50 @@ h3 {
     flex-grow: 1;
 }
 
+
+/* Каталог для услуг, акций, номеров */
+.services-catalog, .promotions-catalog, .rooms-catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.service-card, .promotion-card, .room-card {
+    background-color: #FFFFFF;
+    border: 2px solid var(--accent-gold);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover, .promotion-card:hover, .room-card:hover {
+    transform: scale(1.05);
+}
+
+.service-image, .promotion-image, .room-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.service-card h3, .promotion-card h3, .room-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.service-card p, .promotion-card p, .room-card p {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
 /* Секция бронирования */
 .booking {
     padding: 80px 0;
@@ -501,6 +545,91 @@ h3 {
 .stat-item p {
     font-size: 18px;
     font-family: 'Merriweather', serif;
+}
+
+/* ... (предыдущий код без изменений) ... */
+
+/* Contact Form 7 */
+.wpcf7-form {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.wpcf7-form p {
+    margin-bottom: 20px;
+}
+
+.wpcf7-form label {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.wpcf7-form input, .wpcf7-form select, .wpcf7-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 5px;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    color: var(--text-dark);
+}
+
+.wpcf7-form input[type="submit"] {
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background-color: var(--accent-gray);
+    transform: scale(1.05);
+}
+
+/* Контактная информация */
+.contact-info-list {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-info-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.contact-info-list li::before {
+    content: '★';
+    color: var(--accent-gold);
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Карта */
+.wp-block-embed iframe {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
 }
 
 /* Секция контактов */
@@ -746,7 +875,7 @@ h3 {
 
 /* Gutenberg Blocks */
 .page-content {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: var(--primary-bg);
 }
 
@@ -755,14 +884,14 @@ h3 {
     color: var(--accent-gold);
     font-size: 48px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .wp-block-heading {
     font-family: 'Great Vibes', cursive;
     color: var(--accent-gold);
-    margin: 30px 0 20px;
-    line-height: 1.2;
+    margin: 40px 0 25px;
+    line-height: 1.3;
 }
 
 .wp-block-heading h1, .wp-block-heading h2 {
@@ -782,13 +911,13 @@ h3 {
     font-size: 18px;
     color: var(--text-dark);
     line-height: 1.8;
-    margin: 0 auto 25px;
+    margin: 0 auto 30px;
     max-width: 800px;
     text-align: justify;
 }
 
 .wp-block-image {
-    margin: 30px auto;
+    margin: 40px auto;
     text-align: center;
 }
 
@@ -814,39 +943,50 @@ h3 {
 }
 
 .wp-block-columns {
-    margin: 40px 0;
+    margin: 50px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
+    justify-content: center;
 }
 
 .wp-block-column {
     background-color: #FFFFFF;
-    padding: 25px;
+    padding: 30px;
     border: 2px solid var(--accent-gold);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 360px;
+    text-align: center;
 }
 
 .wp-block-column:hover {
     transform: scale(1.05);
 }
 
+.wp-block-column img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
 .wp-block-list {
     font-family: 'Merriweather', serif;
     font-size: 18px;
     color: var(--text-dark);
-    margin: 20px auto;
+    margin: 30px auto;
     max-width: 800px;
 }
 
 .wp-block-list li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
-    padding-left: 25px;
+    padding-left: 30px;
 }
 
 .wp-block-list li::before {
@@ -858,7 +998,7 @@ h3 {
 }
 
 .wp-block-button {
-    margin: 20px auto;
+    margin: 40px auto;
     text-align: center;
 }
 
@@ -871,6 +1011,7 @@ h3 {
     font-size: 20px;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
 }
 
 .wp-block-button__link:hover {
@@ -879,8 +1020,8 @@ h3 {
 }
 
 .wp-block-embed {
-    margin: 40px auto;
-    max-width: 800px;
+    margin: 50px auto;
+    max-width: 100%;
 }
 
 .wp-block-embed iframe {
@@ -894,6 +1035,7 @@ h3 {
 @media (max-width: 768px) {
     .page-title {
         font-size: 36px;
+        margin-bottom: 40px;
     }
 
     .wp-block-heading h1, .wp-block-heading h2 {
@@ -910,6 +1052,7 @@ h3 {
 
     .wp-block-column {
         min-width: 100%;
+        max-width: 100%;
     }
 
     .wp-block-embed iframe {
